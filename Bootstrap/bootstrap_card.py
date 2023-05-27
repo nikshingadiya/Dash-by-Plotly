@@ -1,13 +1,13 @@
-import dash
-import dash_bootstrap_components as dbc
-import dash_html_components as html
-import dash_core_components as dcc
-import plotly.express as px
-from dash.dependencies import Input, Output
+# Video:    [Bootstrap with Cards - Dash Plotly](https://youtu.be/aEz1-72PKwc)
+# Docs:     [Dash Bootstrap Components:](https://dash-bootstrap-components.opensource.faculty.ai/docs/components/card/)
+#           [Dash HTML/CORE Components:](https://dash.plotly.com/dash-html-components)
+from dash import Dash, dcc, html, Output, Input       # pip install dash
+import dash_bootstrap_components as dbc               # pip install dash-bootstrap-components
+import plotly.express as px                     # pip install pandas; pip install plotly express
 
 df = px.data.gapminder()
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 card_main = dbc.Card(
     [
@@ -54,6 +54,12 @@ card_graph = dbc.Card(
 
 
 app.layout = html.Div([
+    dbc.Row([
+        dbc.Col(html.H1("Bootstrap with Cards - Dash Plotly",
+                        # rf. https://hackerthemes.com/bootstrap-cheatsheet/
+                        className='text-center text-primary'
+        ))
+    ]),
     dbc.Row([dbc.Col(card_main, width=3),
              dbc.Col(card_question, width=3),
              dbc.Col(card_graph, width=5)], justify="around"),  # justify="start", "center", "end", "between", "around"
@@ -85,6 +91,3 @@ def update_graph(value):
 
 if __name__ == "__main__":
     app.run_server(debug=True)
-    
-    
-# https://youtu.be/aEz1-72PKwc

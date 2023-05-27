@@ -1,12 +1,12 @@
+# Video:    [Checklist - Python Dash Plotly](https://youtu.be/amRFPjSgEnk )
+# Docs:     [dcc.Checklist](https://dash.plotly.com/dash-core-components/checklist)
+#
+
 import pandas as pd     
 import datetime as dt
 
-import dash             
-import dash_core_components as dcc
-import dash_html_components as html
-from dash.dependencies import Input, Output
-
-import plotly          
+import dash                                     # pip install dash
+from dash import dcc, html, Input, Output
 import plotly.express as px
 
 df = pd.read_csv("Urban_Park_Ranger_Animal_Condition_Response.csv")  # https://drive.google.com/file/d/1m63TNoZdDUtH5XhK-mc4kDFzO9j97eWW/view?usp=sharing

@@ -1,15 +1,15 @@
-import dash  # (version 1.11.0)
-import dash_core_components as dcc
-import dash_html_components as html
+# Video:    [Input Box - Python Dash Plotly](https://youtu.be/VZ6IdRMc0RI)
+# Docs:     [dcc.Input](https://dash.plotly.com/dash-core-components/input)
+import dash                                     # pip install dash
+from dash import dcc, html, Input, Output 
 import pandas as pd
 import plotly.express as px     # (version 4.6.0)
-from dash.dependencies import Input, Output
 
 app = dash.Dash(__name__)
 
 # ------------------------------------------------------------------------
 # Import and filter data into pandas data frame
-df = pd.read_csv("dup_bees.csv")
+df = pd.read_csv("https://raw.githubusercontent.com/Coding-with-Adam/Dash-by-Plotly/master/Dash%20Components/Input_element/dup_bees.csv")
 df['Value'] = pd.to_numeric(df['Value'])
 mapping = {'HONEY, BEE COLONIES, AFFECTED BY DISEASE - INVENTORY, MEASURED IN PCT OF COLONIES': 'Disease',
            'HONEY, BEE COLONIES, AFFECTED BY OTHER CAUSES - INVENTORY, MEASURED IN PCT OF COLONIES': 'Other',

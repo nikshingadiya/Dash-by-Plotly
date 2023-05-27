@@ -1,7 +1,7 @@
-import dash  # use Dash version 1.16.0 or higher for this app to work
-import dash_core_components as dcc
-import dash_html_components as html
-from dash.dependencies import Output, Input
+# Video:    [All about the Graph Component - Python Dash Plotly](https://youtu.be/G8r2BB3GFVY)
+# Docs:     [dcc.Graph](https://dash.plotly.com/dash-core-components/graph)
+import dash                                     # pip install dash
+from dash import dcc, html, Output, Input
 import plotly.express as px
 
 df = px.data.gapminder()

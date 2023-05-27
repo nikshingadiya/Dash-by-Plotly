@@ -1,9 +1,9 @@
-import dash
-import dash_bootstrap_components as dbc
-import dash_html_components as html
-from dash.dependencies import Input, Output, State
+# Video:    [Bootstrap Collapse Dash Plotly](https://youtu.be/RnJGlgc9vcM)
+# Docs:     [Collapse Documentation:](https://dash-bootstrap-components.opensource.faculty.ai/docs/components/collapse/)
+from dash import Dash, html, Input, Output, State       # pip install dash
+import dash_bootstrap_components as dbc                 # pip install dash_bootstrap_components
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUMEN])  # https://bootswatch.com/default/
+app = Dash(__name__, external_stylesheets=[dbc.themes.LUMEN])  # https://bootswatch.com/default/
 
 app.layout = html.Div([
     html.Div(html.H6("Product: a beautiful Pizza reheated after a day in the fridge, for $99"), style={"text-align":"center"}),
@@ -58,6 +58,3 @@ def toggle_collapse(n, is_open):
 
 if __name__ == "__main__":
     app.run_server(debug=True, port=2000)
-
-    
-# https://youtu.be/RnJGlgc9vcM

@@ -1,7 +1,7 @@
-import dash  # (version 1.11.0)
-import dash_core_components as dcc
-import dash_html_components as html
-from dash.dependencies import Input, Output
+# Video:    [Input Box - Python Dash Plotly](https://youtu.be/VZ6IdRMc0RI)
+# Docs:     [dcc.Input](https://dash.plotly.com/dash-core-components/input)
+import dash                                     # pip install dash
+from dash import dcc, html, Input, Output
 import datetime
 
 app = dash.Dash(__name__)

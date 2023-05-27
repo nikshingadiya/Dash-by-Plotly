@@ -1,18 +1,18 @@
-import dash
-import dash_bootstrap_components as dbc
-import dash_html_components as html
-import dash_core_components as dcc
+from dash import Dash, dcc, html, Input, Output, State        # pip install dash
+import dash_bootstrap_components as dbc             # pip install dash_bootstrap_components
 import plotly.express as px
-from dash.dependencies import Input, Output, State
-
 import pandas as pd
+
+
+
+
 
 # Data source: https://nextspaceflight.com/launches/past/?page=1 Data owner: "Agirlcoding" on Kaggle
 df = pd.read_csv("https://raw.githubusercontent.com/Coding-with-Adam/Dash-by-Plotly/master/Bootstrap/Space_Corrected.csv")
 # print(df.head())
 df = df[df["Status Mission"] != "Prelaunch Failure"]
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUMEN])
+app = Dash(__name__, external_stylesheets=[dbc.themes.LUMEN])
 
 app.layout = html.Div([
     dbc.Row([

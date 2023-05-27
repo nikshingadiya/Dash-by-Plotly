@@ -1,14 +1,14 @@
-import dash
-import dash_bootstrap_components as dbc
-import dash_html_components as html
-import dash_core_components as dcc
+# Video:    [Bootstrap Alerts & Modals - Dash Plotly](https://youtu.be/X3OuhqS8ueM)
+# Docs:     [Dash Bootstrap Components:](https://dash-bootstrap-components.opensource.faculty.ai/docs/components/alert/)
+#           [Dash Bootstrap Themes:](https://dash-bootstrap-components.opensource.faculty.ai/docs/themes/)
+#           [Dash HTML/CORE Components:](https://dash.plotly.com/dash-html-components)
+from dash import Dash, dcc, html, Input, Output, State           # pip install dash
+import dash_bootstrap_components as dbc         # pip install dash_bootstrap_components
 import plotly.express as px
-from dash.dependencies import Input, Output, State
 import pandas as pd
-
 df = pd.read_csv("https://raw.githubusercontent.com/Coding-with-Adam/Dash-by-Plotly/master/Bootstrap/Berlin_crimes.csv")
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP]) # https://bootswatch.com/default/
+app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP]) # https://bootswatch.com/default/
 
 modal = html.Div(
     [
@@ -157,6 +157,3 @@ def toggle_modal(n1, n2, is_open):
 
 if __name__ == "__main__":
     app.run_server(debug=True)
-
-    
-# https://youtu.be/X3OuhqS8ueM

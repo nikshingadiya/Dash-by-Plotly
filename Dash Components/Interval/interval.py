@@ -1,10 +1,10 @@
-import plotly          
-import plotly.graph_objects as go
+# Video: [The Dash Interval overview](https://youtu.be/OSFoBbNnPWk)
+# Docs:  [dcc.Interval](https://dash.plotly.com/dash-core-components/interval)
+#
 
-import dash             
-import dash_core_components as dcc
-import dash_html_components as html
-from dash.dependencies import Input, Output
+import plotly.graph_objects as go
+import dash                                     # pip install dash
+from dash import dcc, html, Input, Output
 from dash.exceptions import PreventUpdate
 
 app = dash.Dash(__name__)

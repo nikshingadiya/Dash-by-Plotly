@@ -1,13 +1,13 @@
+# Video:    [DatePickerRange - Python Dash Plotly](https://youtu.be/5uwxoxaPD8M)
+# Docs:     [dcc.DatePickerRange](https://dash.plotly.com/dash-core-components/datepickerrange)
+#           [plotly.express.density_mapbox](https://plotly.com/python-api-reference/generated/plotly.express.density_mapbox.html#plotly.express.density_mapbox)
 from datetime import datetime as dt
 import plotly.express as px
-import dash
-import dash_html_components as html
-import dash_core_components as dcc
-from dash.dependencies import Input, Output
+import dash                                     # pip install dash
+from dash import dcc, html, Input, Output
 import pandas as pd
-
 # Data from NYC Open Data portal
-df = pd.read_csv('Sidewalk_Caf__Licenses_and_Applications.csv')
+df = pd.read_csv("https://raw.githubusercontent.com/Coding-with-Adam/Dash-by-Plotly/master/Dash%20Components/DatePickerRange/Sidewalk_Caf__Licenses_and_Applications.csv")
 df['SUBMIT_DATE'] = pd.to_datetime(df['SUBMIT_DATE'])
 df.set_index('SUBMIT_DATE', inplace=True)
 print(df[:5][['BUSINESS_NAME', 'LATITUDE', 'LONGITUDE', 'APP_SQ_FT']])

@@ -1,17 +1,17 @@
+# Video:    [Dropdown Selector- Python Dash Plotly](https://youtu.be/UYH_dNSX1DM)
+# Docs:     [dcc.Dropdown](https://dash.plotly.com/dash-core-components/dropdown)
+#
 import pandas as pd     #(version 1.0.0)
-import plotly           #(version 4.5.4) pip install plotly==4.5.4
 import plotly.express as px
-
 import dash             #(version 1.9.1) pip install dash==1.9.1
-import dash_core_components as dcc
-import dash_html_components as html
-from dash.dependencies import Input, Output
+from dash import dcc, html, Input, Output
+
 
 app = dash.Dash(__name__)
 
 #---------------------------------------------------------------
 #Taken from https://opendata.cityofnewyork.us/
-df = pd.read_csv("Urban_Park_Ranger_Animal_Condition.csv")  # https://drive.google.com/file/d/1Jjpqe2HSlqVfIm6Dp5frDg0Ogx-NaUOv/view?usp=sharing
+df = pd.read_csv("https://raw.githubusercontent.com/Coding-with-Adam/Dash-by-Plotly/master/Dash%20Components/Dropdown/Urban_Park_Ranger_Animal_Condition.csv")  
 
 #---------------------------------------------------------------
 app.layout = html.Div([

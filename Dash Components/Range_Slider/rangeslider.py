@@ -1,10 +1,10 @@
+# Video:    [Range Slider -- Python Dash Plotly](https://youtu.be/Zvz2LpziQAs)
+# Docs:     [dcc.RangeSlider](https://dash.plotly.com/dash-core-components/rangeslider)
+#
 import pandas as pd     #(version 1.0.0)
-import plotly           #(version 4.5.0)
-import plotly.express as px
-
-import dash             #(version 1.8.0)
-import dash_core_components as dcc
-import dash_html_components as html
+import dash                                            # pip install dash
+from dash import dcc, html
+import plotly.express as px                     # # pip install pandas; pip install plotly express			  
 from dash.dependencies import Input, Output
 
 app = dash.Dash(__name__)
@@ -14,7 +14,7 @@ app = dash.Dash(__name__)
 #The Bureau of Transportation Statistics (BTS) Border Crossing Data provide summary statistics
 #for inbound crossings at the U.S.-Canada and the U.S.-Mexico border at the port leve
 
-df = pd.read_csv("Border_Crossing_Entry_Data.csv")
+df = pd.read_csv("Border_Crossing_Entry_Data.csv")  # https://drive.google.com/file/d/1UnQvjvF5F0C1NKhvZ-TnTg4cfbe67uvP/view?usp=sharing
 df['Date'] = pd.to_datetime(df['Date'])
 df['Date'] = df['Date'].dt.year
 df = df.set_index('Date')
@@ -54,7 +54,7 @@ app.layout = html.Div([
             vertical=False,        # True, False - vertical, horizontal slider
             verticalHeight=900,    # hight of slider (pixels) when vertical=True
             className='None',
-            tooltip={'always visible':False,  # show current slider values
+            tooltip={'always_visible':False,  # show current slider values
                      'placement':'bottom'},
             ),
     ]),
